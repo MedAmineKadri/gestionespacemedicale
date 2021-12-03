@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Archive{% endblock %}
+
+{% block body %}
+    <h1>Archive</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ archive.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ archive.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ archive.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Rdv</th>
+                <td>{{ archive.rdv }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ archive.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a style="color:blue;" href="{{ path('archive_index') }}">return</a>
+
+    <a style="color:blue;" href="{{ path('archive_edit', {'id': archive.id}) }}">update</a>
+
+    {{ include('archive/_delete_form.html.twig') }}
+{% endblock %}

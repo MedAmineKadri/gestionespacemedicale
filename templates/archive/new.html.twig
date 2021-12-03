@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Archive{% endblock %}
+
+{% block body %}
+    <h1>Create new Archive</h1>
+
+    {{ include('archive/_form.html.twig') }}
+
+    <a style="color:blue;" href="{{ path('archive_index') }}">return</a>
+{% endblock %}
+
+

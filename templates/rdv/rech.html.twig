@@ -1,0 +1,51 @@
+<form type="text" name="date" >
+    <input type="submit" value="recherche" >
+
+
+
+
+</form>
+
+<table class="table">
+
+
+    <thead>
+    <style>
+        table {
+            width: 100%;
+            background-color: yellow;
+
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+
+        }
+    </style>
+
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>email</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for rdv in rdvs %}
+    <tr>
+        <td>{{ rdv.id }}</td>
+        <td>{{ rdv.firstname }}</td>
+        <td>{{ rdv.lastname }}</td>
+        <td>{{ rdv.date }}</td>
+        <td>{{ rdv.time }}</td>
+        <td>{{ rdv.email }}</td>
+        <td>
+            <a style="color:blue;" href="{{ path('rdv_show', {'id': rdv.id}) }}">consult</a>
+            <a style="color:blue;" href="{{ path('rdv_edit', {'id': rdv.id}) }}">update</a>
+
+        </td>
+    </tr>

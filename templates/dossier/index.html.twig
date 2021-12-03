@@ -1,0 +1,45 @@
+
+                    {% extends 'bb.html.twig' %}
+
+                    {% block title %}Folder index{% endblock %}
+
+                    {% block body %}
+                        <h1>Folder index</h1>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>date</th>
+
+                                <th>Image</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for dossier in dossiers %}
+                                <tr>
+                                    <td>{{ dossier.id }}</td>
+                                    <td>{{ dossier.nom }}</td>
+                                    <td>{{ dossier.prenom }}</td>
+                                    <td>{{ dossier.date ? dossier.date|date('Y-m-d H:i:s') : '' }}</td>
+                                    <td>{{ dossier.image }}</td>
+                                    <td>
+                                        <a href="{{ path('dossier_show', {'id': dossier.id}) }}">consult</a>
+                                        <a href="{{ path('dossier_edit', {'id': dossier.id}) }}">update</a>
+
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="6">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="{{ path('dossier_data') }}">download</a>
+
+                        <a href="{{ path('dossier_new') }}">new folder</a>
+                    {% endblock %}

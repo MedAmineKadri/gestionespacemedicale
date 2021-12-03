@@ -1,0 +1,38 @@
+{% extends 'bb.html.twig' %}
+
+{% block title %}Rdv{% endblock %}
+
+{% block body %}
+    <h1>Rdv</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rdv.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ rdv.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ rdv.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ rdv.date }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ rdv.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rdv_index') }}">return</a>
+
+    <a href="{{ path('rdv_edit', {'id': rdv.id}) }}">update</a>
+
+    {{ include('rdv/_delete_form.html.twig') }}
+{% endblock %}

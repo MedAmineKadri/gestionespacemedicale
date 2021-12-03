@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    {{ include('dos/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a style="color:blue;" href="{{ path('dos_index') }}">return</a>
+
+    {{ include('dos/_delete_form.html.twig') }}
+{% endblock %}

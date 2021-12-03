@@ -1,0 +1,39 @@
+{% block body %}
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+    <div class="card card-4">
+    <div class="card-body">
+    <h2 align="center" bs-color="blue" class="title">my patients :</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rdv in rdvs %}
+            <tr>
+                <td>{{ rdv.id }}</td>
+                <td>{{ rdv.firstname }}</td>
+                <td>{{ rdv.lastname }}</td>
+                <td>{{ rdv.date }}</td>
+                <td>{{ rdv.time }}</td>
+                <td>{{ rdv.email }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% block body %}
+    <h1 align="center"> patients folders</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Image</th>
+            <th>Date</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for do in dos %}
+            <tr>
+                <td>{{ do.id }}</td>
+                <td>{{ do.firstname }}</td>
+                <td>{{ do.lastname }}</td>
+                <td>{{ do.image }}</td>
+                <td>{{ do.date }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
